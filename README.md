@@ -3,6 +3,7 @@
 This repository contains the source code files for project Getting and Cleaning Data Course Project part of Coursera Data Science Specialzation course which consists of *run_analysis.R* script file, metadata file *CodeBook.md* for that describes the variables, the data, and transformations or work that is performed to clean up the data and the tidy data itself *tidyData.txt*.
 
 The overall tasks performed by the script file *run_analysis.R* are enlisted as below :-
+
 1. Downloads the dataset to workspace.
 2. Extracts activities and feature info and load it.
 3. Loads the test and traning data and extract data columns related to mean and standard deviation.
