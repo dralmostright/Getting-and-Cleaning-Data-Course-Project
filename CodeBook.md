@@ -45,7 +45,7 @@ The cleaning and transformation of the data set is carried out by the script fil
 6. Merges the activity and subject datas with respecitve test and traning data sets..
 7. Merges the test and traning data.
 8. Provides the column names for the data i.e "Subjects" for subjects and "Activity" fro activiteis and rest the names obtained in step 3.
-8. Converts the activity and subjects of final data set as factors for further cleaning.
-9. The resulted dataset obtained is then melted using the id's for subjects and activites.
-10. Then the data are again transformed to independent tidy data set with the average of each variable for each activity and each subject.
-11. Finally the cleaned and transformed data set are saved to file tidyData.txt
+9. Converts the activity and subjects of final data set as factors for further cleaning.
+10. The resulted dataset obtained is then melted using the id's for subjects and activites.
+11. Then the data are again transformed to independent tidy data set with the average of each variable for each activity and each subject.
+12. Finally the cleaned and transformed data set are saved to file tidyData.txt

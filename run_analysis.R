@@ -1,7 +1,7 @@
 ##################################################################################################
 ##################################################################################################
 ## 	The source code below performs the following                                            ##
-## 											        ##
+## 									                        ##
 ## 1. Merges the training and the test sets to create one data set.                             ##
 ## 2. Extracts only the measurements on the mean and standard deviation for each measurement.   ##
 ## 3. Uses descriptive activity names to name the activities in the data set                    ##
@@ -26,12 +26,18 @@ if (!file.exists(filename)){
   download.file(fileURL, filename, method="curl")
 }  
 
-## Extract the downloaded compressed dataset if not already present on work space
+## Extract the downloaded compressed dataset if not already present on work space and move to working directory
 if (!file.exists("/R/workspace/dc-week4/uci_har_dataset")) { 
   unzip(filename, exdir='/R/workspace/dc-week4/uci_har_dataset') 
+  setwd("/R/workspace/dc-week4/uci_har_dataset/UCI HAR Dataset")
+  list.of.files <- list.files("/R/workspace/dc-week4/uci_har_dataset/UCI HAR Dataset")
+  file.copy(from = list.of.files, to = "/R/workspace/dc-week4/uci_har_dataset/",recursive = TRUE, copy.mode = TRUE)
 }
 
 ### Start tidying data.
+
+## Set the working directory to save the tidy data
+setwd("/R/workspace/Getting-and-Cleaning-Data-Course-Project")
 
 ## Read tthe features dataset and store it
 features <- read.table("/R/workspace/dc-week4/uci_har_dataset/features.txt", header=FALSE)
@@ -51,7 +57,7 @@ selectedFeature <- gsub('-mean', "Mean", selectedFeature)
 selectedFeature <- gsub('-std', 'Std', selectedFeature)
 selectedFeature <- gsub('\\(\\)', '', selectedFeature)
 selectedFeature <- gsub('^t', 'time', selectedFeature)
-selectedFeature <- gsub('^f', 'time', selectedFeature)
+selectedFeature <- gsub('^f', 'frequency', selectedFeature)
 selectedFeature <- gsub("Acc", "Accelerometer", selectedFeature)
 selectedFeature <- gsub("Gyro", "Gyroscope", selectedFeature)
 selectedFeature <- gsub("Mag", "Magnitude",selectedFeature)
